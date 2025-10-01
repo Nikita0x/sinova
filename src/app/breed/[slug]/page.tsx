@@ -1,7 +1,7 @@
 'use client';
 import { use } from 'react';
 import { useEffect, useState } from 'react';
-import type { Breed } from '../../../../interfaces/breeds.interface';
+import type { DogBreed } from '../../../../interfaces/breeds.interface';
 import Image from 'next/image';
 import PopupImage from '../../../../components/PopupImage';
 import Loader from '../../../../components/Loader';
@@ -11,7 +11,7 @@ interface BreedPageProps {
 }
 
 interface BreedImagesObject {
-  breeds: Breed[];
+  breeds: DogBreed[];
   id: string;
   height: number;
   width: number;
@@ -20,7 +20,7 @@ interface BreedImagesObject {
 
 export default function BreedPage({ params }: BreedPageProps) {
   const { slug } = use(params);
-  const [breed, setBreed] = useState<Breed | null>(null);
+  const [breed, setBreed] = useState<DogBreed | null>(null);
   const [images, setImages] = useState<BreedImagesObject[]>([]);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
